@@ -1,9 +1,21 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <!-- Link the style sheet here -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Best Cars Dealership</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
+  <style>
+    .card-img-top {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+  </style>
 </head>
-<div>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 3.5rem;">
     <div class="container-fluid">
       <h2 style="padding-right: 5%;">Dealerships</h2>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,45 +36,51 @@
       </div>
     </div>
   </nav>
-  
-    <div class="card" style="width: 80%;margin: auto; margin-top:5%;">
-      <div class="banner" name="about-header">
-      <!-- Insert header information here -->
-      </div>
-      <div style="display: flex;flex-direction: row; margin:auto">
+
+  <div class="card" style="width: 80%; margin: auto; margin-top: 5%;">
+    <div class="card-body">
+      <h1 class="card-title text-center">About Us</h1>
+      <p class="card-text text-center">Welcome to Best Cars Dealership, the premier destination for top-quality vehicles across North America. We specialize in offering a diverse selection of domestic and imported cars at unbeatable prices.</p>
+    </div>
+
+    <div style="display: flex; justify-content: space-around; margin: 2rem auto;">
+
+      <!-- Team Member 1 -->
       <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person1</p>
-          <p>Person1 Title</p>
-          <p class="card-text">Some text that explains the person1 in about 2 short sentences</p>
-          <p>person1@example.com</p>
+        <img class="card-img-top" src="https://th.bing.com/th/id/R.8c012738dc65a6c1abf2817ac8f1c8f5?rik=SPT%2fyv%2f9JLPTDA&pid=ImgRaw&r=0" alt="Person 1">
+        <div class="card-body text-center">
+          <h5 class="card-title">Alex Johnson</h5>
+          <p class="card-subtitle mb-2 text-muted">Chief Executive Officer</p>
+          <p class="card-text">Alex has over 15 years of experience in the automotive industry, leading Best Cars to become a trusted name in the market.</p>
+          <p>Email: alex.johnson@bestcars.com</p>
         </div>
       </div>
 
+      <!-- Team Member 2 -->
       <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person2</p>
-          <p>Person2 Title</p>
-          <p class="card-text">Some text that explains the person2 in about 2 short sentences</p>
-          <p>person2@example.com</p>
+        <img class="card-img-top" src="https://th.bing.com/th/id/OIP.leRaZskYpTKA55a0St0tZgHaJa?rs=1&pid=ImgDetMain" alt="Person 2">
+        <div class="card-body text-center">
+          <h5 class="card-title">Taylor Smith</h5>
+          <p class="card-subtitle mb-2 text-muted">Head of Sales</p>
+          <p class="card-text">Taylor is an expert in customer relations and ensures every client finds their dream car with ease.</p>
+          <p>Email: taylor.smith@bestcars.com</p>
         </div>
       </div>
 
+      <!-- Team Member 3 -->
       <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person3</p>
-          <p>Person3 Title</p>
-          <p class="card-text">Some text that explains the person3 in about 2 short sentences</p>
-          <p>person3@example.com</p>
+        <img class="card-img-top" src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg" alt="Person 3">
+        <div class="card-body text-center">
+          <h5 class="card-title">Jordan Lee</h5>
+          <p class="card-subtitle mb-2 text-muted">Chief Financial Officer</p>
+          <p class="card-text">Jordan manages the dealership's finances and ensures we deliver value to our customers.</p>
+          <p>Email: jordan.lee@bestcars.com</p>
         </div>
       </div>
-    </div>
-    </div>
-    </div>
-    
-</div>
 
+    </div>
+  </div>
+
+  <script src="/static/bootstrap.bundle.min.js"></script>
+</body>
 </html>
