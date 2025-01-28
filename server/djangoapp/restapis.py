@@ -2,6 +2,8 @@
 # import requests
 import os
 from dotenv import load_dotenv
+import requests
+from urllib.parse import urlencode
 
 load_dotenv()
 
@@ -12,21 +14,29 @@ sentiment_analyzer_url = os.getenv(
     default="http://localhost:5050/")
 
 def get_request(endpoint, **kwargs):
-    params = ""
-    if(kwargs):
-        for key,value in kwargs.items():
-            params=params+key+"="+value+"&"
-
-    request_url = backend_url+endpoint+"?"+params
-
-    print("GET from {} ".format(request_url))
+    # Ensure the backend URL is correctly set
+    #backend_url = "https://waelsammari2-3030.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai"
+    
+    # Build the full request URL
+    params = urlencode(kwargs)  # Safely encode query parameters
+    request_url = f"{backend_url}{endpoint}"
+    if params:
+        request_url += f"?{params}"
+    
+    print(f"GET from {request_url}")  # Debugging
+    
     try:
-        # Call get method of requests library with URL and parameters
-        response = requests.get(request_url)
+        # Send GET request with a timeout
+        response = requests.get(request_url, timeout=10)
+        
+        # Check if the request was successful
+        response.raise_for_status()  # Raise an exception for HTTP errors (e.g., 4xx, 5xx)
+        
+        # Parse and return the JSON response
         return response.json()
-    except:
-        # If any error occurs
-        print("Network exception occurred")
+    except requests.exceptions.RequestException as e:
+        print(f"Network exception occurred: {e}")  # Print detailed error
+        return None
 
 def analyze_review_sentiments(text):
     request_url = sentiment_analyzer_url+"analyze/"+text
